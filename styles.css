@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&display=swap');
+
+:root {
+    --bg1: #8175AF;
+    --bg2: #817F51;
+    --pk1: #F5CB0A;
+    --pk2: #1a3972;
+    --pk2-: #344b77;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+    --fredoka: 'Fredoka One', cursive;
+    --press: 'Press Start 2P', cursive;
+}
+body {
+    font: var(--sm) var(--press);
+    background-image: linear-gradient(to bottom right, var(--bg1),var(--bg2));
+}
+.container {
+    margin: 20px;
+}
+.titulo {
+    text-align: center;
+    color: var(--pk1);
+}
+.container > img{
+    display: block;
+    margin: auto;
+    width: 20%;
+    height: auto;
+}
+.subtitulo {
+    color: var(--pk2);
+}
+
+/* Seleccionar Mascota */
+.seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tarjetas {
+    display: flex;
+    gap: 10px;
+}
+.tarjeta-mascota {
+    width: 160px;
+    height: 150px;
+    background: lightgray;
+    padding: 10px;
+    box-sizing: border-box;
+    border: black solid 3px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--pk2);
+    cursor: pointer;
+    box-shadow: 3px 3px black;
+}
+.tarjeta-mascota img {
+    display: block;
+    margin: auto;
+    width: 80px;
+}
+.tarjetas input {
+    display: none;
+}
+#boton-mascota {
+    background: var(--pk2);
+    color: lightgray;
+    box-shadow: 3px 3px black;
+    padding: 15px;
+    margin: 20px;
+    font: var(--sm) var(--press);
+    border: black solid 2px;
+    border-radius: 10px;
+}
+#boton-mascota:hover {
+    cursor: pointer;
+    background: var(--pk2-);
+    box-shadow: 4px 4px black;
+    transform: translateY(-1px);
+}
+#boton-mascota:active {
+    box-shadow: 0 0;
+    transform: translate(3px, 3px);
+}
+
+/* Seleccionar Ataque */
+.seleccionar-ataque {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.seleccionar-ataque p {
+    width: 100%;
+    display: block;
+    line-height: 150%;
+}
+.seleccionar-ataque p span {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--pk2);
+}
+.botones-ataque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botones-ataque button {
+    width: 170px;
+    background: var(--pk2);
+    color: lightgray;
+    box-shadow: 3px 3px black;
+    padding: 15px;
+    margin: 20px;
+    font: var(--sm) var(--press);
+    border: black solid 2px;
+    border-radius: 10px;
+}
+.botones-ataque button:hover {
+    cursor: pointer;
+    background: var(--pk2-);
+    box-shadow: 4px 4px black;
+    transform: translateY(-1px);
+}
+.botones-ataque button:active {
+    box-shadow: 0 0;
+    transform: translate(3px, 3px);
+}
+
+/* Mensajes */
+.mensajes {
+    line-height: 150%;
+}
+.span-mensaje {
+    font-weight: bold;
+    color: var(--pk2);
+}
+
+/* Final - Reiniciar */
+.reiniciar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightgray;
+    padding: 30px;
+    width: 50%;
+    border: var(--pk2) solid 8px;
+    border-radius: 20px;
+}
+.mensaje-final {
+    color: var(--pk2);
+    font-size: large;
+}
+#boton-reiniciar {
+    width: 160px;
+    background: var(--pk2);
+    color: lightgray;
+    box-shadow: 3px 3px black;
+    padding: 15px;
+    margin: 40px 0 20px 0;
+    font: var(--sm) var(--press);
+    border: black solid 2px;
+    border-radius: 10px;
+}
+#boton-reiniciar:hover {
+    cursor: pointer;
+    background: var(--pk2-);
+    box-shadow: 4px 4px black;
+    transform: translateY(-1px);
+}
+#boton-reiniciar:active {
+    box-shadow: 0 0;
+    transform: translate(3px, 3px);
+}
+
+
+
+@media (max-width: 600px) {
+    .subtitulo {
+      font-size: small;
+    }
+    .tarjetas {
+        flex-direction: column;
+    }
+    .seleccionar-ataque p {
+        font-size: small;
+    }
+    .botones-ataque {
+        flex-direction: column;
+    }
+    .botones-ataque button {
+        margin: 10px;
+    }
+    .mensajes {
+      font-size: x-small;
+    }
+  }
