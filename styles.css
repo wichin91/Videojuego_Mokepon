@@ -12,32 +12,43 @@
     --fredoka: 'Fredoka One', cursive;
     --press: 'Press Start 2P', cursive;
 }
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
     font: var(--sm) var(--press);
-    background-image: linear-gradient(to bottom right, var(--bg1),var(--bg2));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url(./images/arena.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .container {
-    margin: 20px;
+    padding: 20px;
 }
 .titulo {
-    text-align: center;
     color: var(--pk1);
+    text-align: center;
+    text-shadow: 1px 1px 2px var(--pk2), -1px 1px 2px var(--pk2), 1px -1px 2px var(--pk2), -1px -1px 2px var(--pk2);
 }
 .container > img{
     display: block;
     margin: auto;
-    width: 20%;
+    width: 10%;
     height: auto;
 }
 .subtitulo {
     color: var(--pk2);
+    text-shadow: 1px 1px 2px var(--pk1), -1px 1px 2px var(--pk1), 1px -1px 2px var(--pk1), -1px -1px 2px var(--pk1);
 }
 
 /* Seleccionar Mascota */
 .seleccionar-mascota {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 .tarjetas {
@@ -45,20 +56,19 @@ body {
     gap: 10px;
 }
 .tarjeta-mascota {
-    width: 160px;
-    height: 150px;
-    background: lightgray;
-    padding: 10px;
-    box-sizing: border-box;
-    border: black solid 3px;
-    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    width: 160px;
+    height: 150px;
+    padding: 10px;
     color: var(--pk2);
-    cursor: pointer;
+    background: lightgray;
     box-shadow: 3px 3px black;
+    border: black solid 3px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 .tarjeta-mascota img {
     display: block;
@@ -71,18 +81,18 @@ body {
 #boton-mascota {
     background: var(--pk2);
     color: lightgray;
-    box-shadow: 3px 3px black;
     padding: 15px;
     margin: 20px;
     font: var(--sm) var(--press);
+    box-shadow: 3px 3px black;
     border: black solid 2px;
     border-radius: 10px;
 }
 #boton-mascota:hover {
-    cursor: pointer;
     background: var(--pk2-);
     box-shadow: 4px 4px black;
     transform: translateY(-1px);
+    cursor: pointer;
 }
 #boton-mascota:active {
     box-shadow: 0 0;
@@ -93,18 +103,7 @@ body {
 .seleccionar-ataque {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-.seleccionar-ataque p {
-    width: 100%;
-    display: block;
-    line-height: 150%;
-}
-.seleccionar-ataque p span {
-    text-decoration: underline;
-    font-weight: bold;
-    color: var(--pk2);
 }
 .botones-ataque {
     display: flex;
@@ -135,11 +134,48 @@ body {
 
 /* Mensajes */
 .mensajes {
-    line-height: 150%;
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+    background-color: lightgray;
+    text-align: center;
+    border: black solid 4px;
+    border-radius: 10px;
+    box-shadow: 2px 2px black;
+    box-sizing: border-box;
 }
 .span-mensaje {
     font-weight: bold;
-    color: var(--pk2);
+    line-height: 150%;
+    color: var(--pk1);
+    text-shadow: 2px 2px 2px var(--pk2), -2px 2px 2px var(--pk2), 2px -2px 2px var(--pk2), -2px -2px 2px var(--pk2);
+}
+.ataques {
+    width: 80%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+.ataques>div {
+    margin: 10px auto;
+    width: 80%;
+    background-color: lightgray;
+    border: black solid 4px;
+    border-radius: 10px;
+    box-shadow: 2px 2px black;
+    box-sizing: border-box;
+}
+#vidas-jugador,
+#vidas-enemigo {
+    color: red;
+    font-weight: bold;
+    text-shadow: 0 0 2px lightgray, 0 0 2px lightgray, 0 0 2px lightgray, 0 0 2px lightgray;
+}
+#mascota-jugador,
+#mascota-enemigo {
+    font-weight: bold;
+    color: var(--pk1);
+    text-shadow: 2px 2px 2px var(--pk2), -2px 2px 2px var(--pk2), 2px -2px 2px var(--pk2), -2px -2px 2px var(--pk2);
 }
 
 /* Final - Reiniciar */
@@ -187,6 +223,9 @@ body {
 
 
 @media (max-width: 600px) {
+    .container > img{
+        width: 20%;
+    }
     .subtitulo {
       font-size: small;
     }
@@ -204,5 +243,11 @@ body {
     }
     .mensajes {
       font-size: x-small;
+    }
+    .ataques {
+        width: 100%;
+    }
+    .ataques div {
+        width: 90%;
     }
   }
